@@ -73,15 +73,8 @@ def cahngeMan():
     global change
     global led
     global opt
-
-    if change == 1:
-        db.child("opt").update({"change":0})
-        for i in range(strip.numPixels()):
-            strip.setPixelColor(i, Color(0,0,0))
-            strip.show()
             
     for i in range(strip.numPixels()):
-        getData()
         color = Color(r,g,b)
         strip.setPixelColor(n, color)
         strip.show()
@@ -209,7 +202,7 @@ def hsv2rgb(h, s, v):
     h = float(h)
     s = float(s)
     v = float(v)
-    h60 = h / 60.0
+    h60 = h / 60.0	
     h60f = math.floor(h60)
     hi = int(h60f) % 6
     f = h60 - h60f
